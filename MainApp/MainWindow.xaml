@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        
+        Title="MainWindow" Height="500" Width="400">
+    <Grid Margin="20">
+        <ListView x:Name="Lv_UserList" />
+
 
     </Grid>
 </Window>
