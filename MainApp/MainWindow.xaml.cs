@@ -21,7 +21,17 @@ public partial class MainWindow : Window
     public async Task GetUsersAsync() //Hämta data 
     {
         using var client = new HttpClient(); //REST förfrågan
-        var response = await client.GetFromJsonAsync<IEnumerable<User>>("https://localhost/api/users");
+        var data = await client.GetFromJsonAsync<IEnumerable<User>>("https://localhost/api/users"); //Hämtar data från API:et, converterar från json till Ienumarable list
         //var response = await client.GetFromJsonAsync<IEnumerable<User>>("https://localhost/api/users");
+
+
+        Lv_UserList.ItemsSource = data;
+    
+    }
+
+    private async void Btn_GetUsers_Click(object sender, RoutedEventArgs e)
+    {
+        await GetUsersAsync();
+
     }
 }
