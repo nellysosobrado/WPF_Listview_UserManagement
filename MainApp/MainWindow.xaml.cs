@@ -1,4 +1,5 @@
 ﻿
+using MainApp.Models;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Security.RightsManagement;
@@ -16,10 +17,11 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
-
-    public async Task GetUsersAsync()
+    //https://localhost/api/users
+    public async Task GetUsersAsync() //Hämta data 
     {
-        using var client = new HttpClient();
+        using var client = new HttpClient(); //REST förfrågan
         var response = await client.GetFromJsonAsync<IEnumerable<User>>("https://localhost/api/users");
+        //var response = await client.GetFromJsonAsync<IEnumerable<User>>("https://localhost/api/users");
     }
 }
